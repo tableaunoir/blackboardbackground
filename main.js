@@ -52,19 +52,19 @@ function average(map, x, y, sideLength, range) {
 
     if (x != 0) {
         counter += 1.0
-        accumulator += map[y][x - halfSide];
+        accumulator += map[x - halfSide][y];
     }
     if (y != 0) {
         counter += 1.0
-        accumulator += map[y - halfSide][x];
+        accumulator += map[x][y - halfSide];
     }
     if (x != size - 1) {
         counter += 1.0
-        accumulator += map[y][x + halfSide];
+        accumulator += map[x + halfSide][y];
     }
     if (y != size - 1) {
         counter += 1.0
-        accumulator += map[y + halfSide][x];
+        accumulator += map[x][y + halfSide];
     }
 
     map[x][y] = (accumulator / counter) + rnd(range);
